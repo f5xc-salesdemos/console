@@ -18,7 +18,7 @@ params:
     example: example-ip-prefix-set
   prefix:
     required: true
-    description: IP prefixes — at least one required (e.g. 10.0.0.0/24). Add Item → fill CIDR.
+    description: IP prefixes — Add Item creates an inline row (NO Apply button). Fill IPv4 Prefix directly.
 steps:
   - id: navigate-to-list
     action: navigate
@@ -39,17 +39,13 @@ steps:
     action: click
     selector: button:text('Add Item')
     context: Prefix section
-    description: Add Prefix entry
+    description: Add Prefix entry (inline row, no Apply)
     then:
       - id: fill-prefix-value
         action: fill
         selector: textbox[name='IPv4 Prefix']
         value: "{prefix}"
         description: Enter IPv4 Prefix for the Prefix entry
-      - id: apply-prefix
-        action: click
-        selector: button:text('Apply')
-        description: Confirm Prefix entry
   - id: save
     action: click
     selector: "[class*='save-bt']"
