@@ -35,6 +35,11 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
+  - id: configure-receiver_configuration
+    action: click
+    selector: button:text('Configure')
+    context: Receiver Configuration section
+    description: Open the Receiver Configuration configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

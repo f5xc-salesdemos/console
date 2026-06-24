@@ -46,6 +46,11 @@ steps:
     value: "{select_site_type_for_acl}"
     description: Select Select Site Type For acl
     condition: params.select_site_type_for_acl is set
+  - id: configure-site_type_regional_edge
+    action: click
+    selector: button:text('Configure')
+    context: Site Type Regional Edge section
+    description: Open the Site Type Regional Edge configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

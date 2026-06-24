@@ -35,6 +35,11 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
+  - id: configure-aws_parameters
+    action: click
+    selector: button:text('Configure')
+    context: AWS Parameters section
+    description: Open the AWS Parameters configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

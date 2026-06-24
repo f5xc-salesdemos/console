@@ -80,6 +80,11 @@ steps:
     value: "{select_sites_for_proxy}"
     description: Select Select Sites for Proxy
     condition: params.select_sites_for_proxy is set
+  - id: configure-site_or_virtual_site
+    action: click
+    selector: button:text('Configure')
+    context: Site or Virtual Site section
+    description: Open the Site or Virtual Site configuration (required field). The sub-form must be filled for save to succeed.
   - id: select-select_upstream_network
     action: select
     selector: listbox

@@ -85,6 +85,11 @@ steps:
     value: "{select_kubernetes_credentials}"
     description: Select Select Kubernetes Credentials
     condition: params.select_kubernetes_credentials is set
+  - id: configure-kubeconfig
+    action: click
+    selector: button:text('Configure')
+    context: Kubeconfig section
+    description: Open the Kubeconfig configuration (required field). The sub-form must be filled for save to succeed.
   - id: select-kubernetes_pod_network_reachability
     action: select
     selector: listbox

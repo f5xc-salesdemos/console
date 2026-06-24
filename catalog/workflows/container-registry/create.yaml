@@ -51,6 +51,11 @@ steps:
     selector: textbox[name='User Name']
     value: "{user_name}"
     description: Enter User Name
+  - id: configure-password
+    action: click
+    selector: button:text('Configure')
+    context: Password section
+    description: Open the Password configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

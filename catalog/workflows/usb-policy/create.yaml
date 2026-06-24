@@ -35,6 +35,11 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
+  - id: configure-allowed_usb_devices
+    action: click
+    selector: button:text('Configure')
+    context: Allowed USB devices section
+    description: Open the Allowed USB devices configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

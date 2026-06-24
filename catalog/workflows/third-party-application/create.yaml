@@ -44,6 +44,11 @@ steps:
     context: Application Type section
     value: "{application_type}"
     description: Select Application Type
+  - id: configure-application_configuration
+    action: click
+    selector: button:text('Configure')
+    context: Application Configuration section
+    description: Open the Application Configuration configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

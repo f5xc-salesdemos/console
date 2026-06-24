@@ -35,6 +35,11 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
+  - id: configure-site_subnet_parameters
+    action: click
+    selector: button:text('Configure')
+    context: Site Subnet Parameters section
+    description: Open the Site Subnet Parameters configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

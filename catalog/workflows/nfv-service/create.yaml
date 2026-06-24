@@ -54,6 +54,11 @@ steps:
     value: "{external_service_provider}"
     description: Select External Service Provider
     condition: params.external_service_provider is set
+  - id: configure-provider_configuration
+    action: click
+    selector: button:text('Configure')
+    context: Provider Configuration section
+    description: Open the Provider Configuration configuration (required field). The sub-form must be filled for save to succeed.
   - id: select-https_based_management_of_nodes
     action: select
     selector: listbox

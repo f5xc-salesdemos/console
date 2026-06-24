@@ -67,6 +67,11 @@ steps:
     context: Credential Reference section
     value: "{credential_reference}"
     description: Select Credential Reference
+  - id: configure-spoke_vpcs
+    action: click
+    selector: button:text('Configure')
+    context: Spoke VPCs section
+    description: Open the Spoke VPCs configuration (required field). The sub-form must be filled for save to succeed.
   - id: select-segment
     action: select
     selector: listbox

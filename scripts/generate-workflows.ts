@@ -176,9 +176,21 @@ function fieldToSteps(fieldPath: string, meta: FieldMeta, resourceLabel: string)
 			}];
 			return steps;
 		}
-		// Skip these — optional/expansion, not required for minimal create
+		case "configurable": {
+			// Configurable widgets have a "Configure" button that expands a sub-form.
+			// For REQUIRED configurable fields, click Configure to open the sub-form.
+			// The agent fills the sub-fields based on the user's request.
+			if (!meta.required) return [];
+			return [{
+				id: `configure-${param}`,
+				action: "click",
+				selector: `button:text('${meta.configure_action ?? "Configure"}')`,
+				context: `${label} section`,
+				description: `Open the ${label} configuration (required field). The sub-form must be filled for save to succeed.`,
+			}];
+		}
+		// Skip these — optional, not required for minimal create
 		case "key-value-pairs":
-		case "configurable":
 		case "expandable":
 		case "info-text":
 		case "file-upload-button":

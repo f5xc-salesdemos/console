@@ -46,6 +46,11 @@ steps:
     value: "{interface_config_type}"
     description: Select Interface Config Type
     condition: params.interface_config_type is set
+  - id: configure-ethernet_interface
+    action: click
+    selector: button:text('Configure')
+    context: Ethernet Interface section
+    description: Open the Ethernet Interface configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"

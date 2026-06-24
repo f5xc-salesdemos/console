@@ -54,6 +54,11 @@ steps:
     selector: textbox[name='Access Key ID']
     value: "{access_key_id}"
     description: Enter Access Key ID
+  - id: configure-secret_access_key
+    action: click
+    selector: button:text('Configure')
+    context: Secret Access Key section
+    description: Open the Secret Access Key configuration (required field). The sub-form must be filled for save to succeed.
   - id: save
     action: click
     selector: "[class*='save-bt']"
