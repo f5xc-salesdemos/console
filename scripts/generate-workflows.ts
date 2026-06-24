@@ -42,6 +42,7 @@ interface FieldMeta {
 	options?: string[];
 	validation?: { pattern?: string; max_length?: number };
 	mutually_exclusive_with?: string[];
+	console_preselected?: boolean;
 	add_action?: string;
 	nested_resource?: string;
 	resource_type?: string;
@@ -78,6 +79,10 @@ function workspacePrefix(ws: string): string {
 // --- Widget → Step mapper (T2) ---
 function fieldToSteps(fieldPath: string, meta: FieldMeta, resourceLabel: string): Step[] {
 	if (meta.disabled) return [];
+	// API-required OneOfs the console pre-selects need no step for a minimal
+	// create (e.g. service_policy.spec.rule_choice). The agent only touches them
+	// to pick a non-default variant, which is handled dynamically, not generated.
+	if (meta.console_preselected) return [];
 	const label = meta.label ?? fieldPath.split(".").pop()!;
 	const param = toParamName(label);
 	const isName = fieldPath === "metadata.name";
