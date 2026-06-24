@@ -190,16 +190,18 @@ function fieldToSteps(fieldPath: string, meta: FieldMeta, resourceLabel: string)
 							value: `{${toParamName(label)}}`,
 							description: `Fill the first required field in the ${label} sub-form (the agent should provide a value via the '${param}' parameter)`,
 						};
+			const noApply = (meta as { no_apply?: boolean }).no_apply === true;
+			const thenSteps: Step[] = [fillStep];
+			if (!noApply) {
+				thenSteps.push({ id: `apply-${param}`, action: "click", selector: "button:text('Apply')", description: `Confirm ${label} entry` });
+			}
 			return [{
 				id: `add-${param}`,
 				action: "click",
 				selector: "button:text('Add Item')",
 				context: `${label} section`,
-				description: `Add ${label} entry${defaultType ? ` (default type: ${defaultType[1].label})` : ""}`,
-				then: [
-					fillStep,
-					{ id: `apply-${param}`, action: "click" as const, selector: "button:text('Apply')", description: `Confirm ${label} entry` },
-				],
+				description: `Add ${label} entry${defaultType ? ` (default type: ${defaultType[1].label})` : ""}${noApply ? " (inline row, no Apply)" : ""}`,
+				then: thenSteps,
 			}];
 		}
 		case "configurable": {
