@@ -17,8 +17,10 @@ params:
     description: BGP ASN Sets name (lowercase alphanumeric and hyphens)
     example: example-bgp-asn-set
   as_numbers:
-    required: true
-    description: "'Field AS Numbers in Spec is required' — minimum 1 item"
+    required: false
+    description: List of AS Numbers — a row pre-exists with value 0; fill it with a valid ASN (e.g. 64512). Uses
+      ngx-datatable input.
+    default: null
 steps:
   - id: navigate-to-list
     action: navigate
@@ -35,22 +37,12 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
-  - id: add-as_numbers
-    action: click
-    selector: button:text('Add Item')
-    context: AS Numbers section
-    description: Add AS Numbers entry
-    then:
-      - id: fill-as_numbers-value
-        action: fill
-        selector: textbox
-        value: "{as_numbers}"
-        description: Fill the first required field in the AS Numbers sub-form (the agent should provide a value via the
-          'as_numbers' parameter)
-      - id: apply-as_numbers
-        action: click
-        selector: button:text('Apply')
-        description: Confirm AS Numbers entry
+  - id: fill-as_numbers
+    action: fill
+    selector: ngx-datatable input.form-control-md
+    context: AS Numbers table
+    value: "{as_numbers}"
+    description: Enter AS Numbers in the existing table row (no Add Item needed — the table ships one empty row)
   - id: save
     action: click
     selector: "[class*='save-bt']"
