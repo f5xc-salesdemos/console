@@ -16,6 +16,9 @@ params:
     required: true
     description: Protocol Policers name (lowercase alphanumeric and hyphens)
     example: example-protocol-policer
+  protocol_policer:
+    required: true
+    description: Protocol Policer
 steps:
   - id: navigate-to-list
     action: navigate
@@ -32,6 +35,12 @@ steps:
     selector: textbox[name='Name']
     value: "{name}"
     description: Enter Name
+  - id: fill-protocol_policer
+    action: fill
+    selector: ngx-datatable input.form-control-md
+    context: Protocol Policer table
+    value: "{protocol_policer}"
+    description: Enter Protocol Policer in the existing table row (no Add Item needed — the table ships one empty row)
   - id: save
     action: click
     selector: "[class*='save-bt']"
