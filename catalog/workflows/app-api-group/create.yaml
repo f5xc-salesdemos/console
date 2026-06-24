@@ -22,7 +22,7 @@ params:
     default: HTTP Load Balancer
   http_load_balancer:
     required: true
-    description: HTTP Load Balancer
+    description: "Feedback loop: 'Field HTTP Load Balancer in HTTP Load Balancer is required'"
 steps:
   - id: navigate-to-list
     action: navigate
@@ -52,6 +52,23 @@ steps:
     context: HTTP Load Balancer section
     value: "{http_load_balancer}"
     description: Select HTTP Load Balancer
+  - id: attach-http_load_balancer
+    action: click
+    selector: button:text('Add Item')
+    context: HTTP Load Balancer section
+    condition: params.http_load_balancer is set
+    description: Attach HTTP Load Balancer (references a http_loadbalancer)
+    then:
+      - id: select-http_load_balancer
+        action: select
+        selector: listbox
+        context: HTTP Load Balancer selector
+        value: "{http_load_balancer}"
+        description: Select the HTTP Load Balancer
+      - id: apply-http_load_balancer
+        action: click
+        selector: button:text('Apply')
+        description: Confirm HTTP Load Balancer selection
   - id: save
     action: click
     selector: "[class*='save-bt']"

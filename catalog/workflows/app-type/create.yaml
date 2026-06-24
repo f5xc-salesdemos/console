@@ -19,6 +19,9 @@ params:
   ai_ml_feature_type:
     required: true
     description: AI/ML Feature Type
+  app_type_settings:
+    required: true
+    description: "Feedback loop: table widget → nested-resource-list (uses Add Item sub-form)"
 steps:
   - id: navigate-to-list
     action: navigate
@@ -41,6 +44,16 @@ steps:
     context: AI/ML Feature Type table
     value: "{ai_ml_feature_type}"
     description: Enter AI/ML Feature Type in the existing table row (no Add Item needed — the table ships one empty row)
+  - id: add-app_type_settings
+    action: click
+    selector: button:text('Add Item')
+    context: App Type Settings section
+    description: Add App Type Settings entry
+    then:
+      - id: apply-app_type_settings
+        action: click
+        selector: button:text('Apply')
+        description: Confirm App Type Settings entry
   - id: save
     action: click
     selector: "[class*='save-bt']"

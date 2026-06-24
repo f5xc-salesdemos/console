@@ -18,7 +18,7 @@ params:
     example: example-authorization-server
   jwks_uri:
     required: true
-    description: JWKS URI
+    description: "Feedback loop: 'Field JWKS URI in Spec must be a valid absolute URI'"
 steps:
   - id: navigate-to-list
     action: navigate
