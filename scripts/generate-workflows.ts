@@ -47,6 +47,81 @@ function resolveApiSpecs(): string | null {
   return null;
 }
 
+// --- Widget Behavior Catalog (single source of truth) ---
+// Loaded once from api-specs-enriched/config/widget_behaviors.yaml. The catalog
+// declares per-widget-type step templates + timing + quirks. fieldToSteps
+// interprets these templates with per-field metadata. Complex widgets with
+// branching logic (nested-resource-list, resource-selector) fall through to
+// procedural code until their catalog templates encode the branching.
+interface CatalogStep { action: string; selector?: string; value?: string; when?: string; note?: string }
+interface CatalogWidget { summary?: string; steps?: CatalogStep[]; skip?: boolean; extends?: string; timing?: Record<string, number>; quirks?: string[] }
+interface WidgetCatalog { version: string; widgets: Record<string, CatalogWidget>; global: Record<string, unknown> }
+let _widgetCatalog: WidgetCatalog | null = null;
+function loadWidgetCatalog(specsDir: string): WidgetCatalog {
+  if (_widgetCatalog) return _widgetCatalog;
+  const catalogPath = path.join(specsDir, 'config/widget_behaviors.yaml');
+  if (fs.existsSync(catalogPath)) {
+    _widgetCatalog = parseYaml(fs.readFileSync(catalogPath, 'utf-8')) as WidgetCatalog;
+  } else {
+    _widgetCatalog = { version: 'stub', widgets: {}, global: {} };
+  }
+  return _widgetCatalog;
+}
+
+/**
+ * Catalog-driven step generation for SIMPLE widgets (textbox, textarea,
+ * spinbutton, checkbox, table). These have a 1:1 template → step mapping
+ * with no branching. Returns null for widgets that need the procedural path.
+ */
+function catalogDrivenSteps(
+  fieldPath: string, meta: FieldMeta, catalog: WidgetCatalog, label: string, param: string,
+  isName: boolean, hasDefault: boolean,
+): Step[] | null {
+  const wt = meta.widget_type;
+  if (!wt) return null;
+  const widget = catalog.widgets[wt];
+  if (!widget || widget.skip || !widget.steps?.length) {
+    // skip-flagged widgets → empty steps (same as the switch default)
+    if (widget?.skip) return [];
+    return null; // no catalog entry or no steps → fall through to procedural
+  }
+  // Only handle simple 1-step widgets here; complex ones fall through
+  const simpleTypes = new Set(['textbox', 'textarea', 'spinbutton', 'checkbox', 'table']);
+  if (!simpleTypes.has(wt)) return null;
+
+  const steps: Step[] = [];
+  for (const tmpl of widget.steps) {
+    // Interpolate template tokens
+    let selector = tmpl.selector ?? '';
+    selector = selector.replace(/\{label\}/g, label);
+    selector = selector.replace(/\{param\}/g, param);
+
+    // Build the step with keys in the SAME ORDER as the procedural switch to match
+    // golden output exactly. The YAML serializer preserves insertion order.
+    const step: Step = {
+      id: isName ? 'fill-name' : `${tmpl.action === 'check' ? 'check' : 'fill'}-${param}`,
+      action: tmpl.action,
+      selector,
+      ...(wt === 'table' ? { context: `${label} table` } : {}),
+      value: `{${isName ? 'name' : param}}`,
+      description: wt === 'textbox' || wt === 'textarea'
+        ? `Enter ${label}${meta.validation?.pattern ? ` (pattern: ${meta.validation.pattern})` : ''}${meta.validation?.max_length ? `, max ${meta.validation.max_length} chars` : ''}`
+        : wt === 'spinbutton'
+          ? `Set ${label}${hasDefault ? ` (default: ${meta.default})` : ''}`
+          : wt === 'checkbox'
+            ? `Toggle ${label}`
+            : `Enter ${label} in the existing table row (no Add Item needed — the table ships one empty row)`,
+    };
+    if (wt === 'checkbox') {
+      step.condition = `params.${param} is set`;
+    } else if (!isName && hasDefault) {
+      step.condition = `params.${param} is set`;
+    }
+    steps.push(step);
+  }
+  return steps;
+}
+
 // --- Types ---
 interface FieldMeta {
   widget_type?: string;
@@ -106,8 +181,19 @@ function fieldToSteps(fieldPath: string, meta: FieldMeta, _resourceLabel: string
   const label = meta.label ?? fieldPath.split('.').pop()!;
   const param = toParamName(label);
   const isName = fieldPath === 'metadata.name';
-  const hasDefault = meta.default !== undefined && meta.default !== '' && meta.default !== 0;
+  const hasDefault = meta.default !== undefined && meta.default !== null && meta.default !== '' && meta.default !== 0;
 
+  // TRY the catalog-driven path first (simple widgets: textbox/textarea/spinbutton/checkbox/table).
+  // Returns null for widgets that need the procedural switch below (complex branching).
+  const specsDir = resolveApiSpecs();
+  if (specsDir) {
+    const catalog = loadWidgetCatalog(specsDir);
+    const catalogSteps = catalogDrivenSteps(fieldPath, meta, catalog, label, param, isName, hasDefault);
+    if (catalogSteps !== null) return catalogSteps;
+  }
+
+  // Procedural fallback for complex widgets (listbox, configurable, resource-selector,
+  // nested-resource-list) until their catalog templates encode the branching logic.
   switch (meta.widget_type) {
     case 'textbox':
     case 'textarea': {
