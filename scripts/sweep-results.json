@@ -1071,60 +1071,6 @@
     ]
   },
   {
-    "resource": "cloud-connect",
-    "total": 12,
-    "passed": 8,
-    "failedStep": "select-segment",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 6985
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1043
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 13
-      },
-      {
-        "id": "select-provider",
-        "pass": true,
-        "ms": 1860
-      },
-      {
-        "id": "select-site_reference",
-        "pass": true,
-        "ms": 7289
-      },
-      {
-        "id": "select-credential_reference",
-        "pass": true,
-        "ms": 7304
-      },
-      {
-        "id": "configure-spoke_vpcs",
-        "pass": true,
-        "ms": 46
-      },
-      {
-        "id": "fill-spoke_vpcs-value",
-        "pass": true,
-        "ms": 5
-      },
-      {
-        "id": "select-segment",
-        "pass": false,
-        "ms": 1,
-        "err": "selectOption: selector \"listbox\" not found"
-      }
-    ]
-  },
-  {
     "resource": "crl",
     "total": 7,
     "passed": 4,
@@ -3263,60 +3209,6 @@
     ]
   },
   {
-    "resource": "shared-advertise-policy",
-    "total": 10,
-    "passed": 8,
-    "failedStep": "fill-tcp_udp_port_value",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 6952
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1049
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 10
-      },
-      {
-        "id": "select-virtual_site_or_site_or_network",
-        "pass": true,
-        "ms": 1862
-      },
-      {
-        "id": "configure-reference",
-        "pass": true,
-        "ms": 65
-      },
-      {
-        "id": "fill-reference-value",
-        "pass": true,
-        "ms": 6
-      },
-      {
-        "id": "select-internet_vip_choice",
-        "pass": true,
-        "ms": 7284
-      },
-      {
-        "id": "select-tcp_udp_port",
-        "pass": true,
-        "ms": 7278
-      },
-      {
-        "id": "fill-tcp_udp_port_value",
-        "pass": false,
-        "ms": 5,
-        "err": "fill(\"spinbutton[name='TCP/UDP Port']\"): no match for spinbutton[name='TCP/UDP Port']"
-      }
-    ]
-  },
-  {
     "resource": "advertise-policy",
     "total": 11,
     "passed": 10,
@@ -3461,6 +3353,114 @@
         "pass": false,
         "ms": 1,
         "err": "fill(\"ngx-datatable input.form-control\"): no match for ngx-datatable input.form-control"
+      }
+    ]
+  },
+  {
+    "resource": "shared-advertise-policy",
+    "total": 10,
+    "passed": 8,
+    "failedStep": "fill-tcp_udp_port_value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6617
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1054
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 22
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1892
+      },
+      {
+        "id": "configure-reference",
+        "pass": true,
+        "ms": 71
+      },
+      {
+        "id": "fill-reference-value",
+        "pass": true,
+        "ms": 6
+      },
+      {
+        "id": "select-internet_vip_choice",
+        "pass": true,
+        "ms": 7299
+      },
+      {
+        "id": "select-tcp_udp_port",
+        "pass": true,
+        "ms": 7297
+      },
+      {
+        "id": "fill-tcp_udp_port_value",
+        "pass": false,
+        "ms": 3,
+        "err": "fill(\"spinbutton[name='TCP/UDP Port (value)']\"): no match for spinbutton[name='TCP/UDP Port (value)']"
+      }
+    ]
+  },
+  {
+    "resource": "cloud-connect",
+    "total": 12,
+    "passed": 8,
+    "failedStep": "select-segment",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6922
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1054
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 16
+      },
+      {
+        "id": "select-provider",
+        "pass": true,
+        "ms": 1876
+      },
+      {
+        "id": "select-site_reference",
+        "pass": true,
+        "ms": 7289
+      },
+      {
+        "id": "select-credential_reference",
+        "pass": true,
+        "ms": 7273
+      },
+      {
+        "id": "configure-spoke_vpcs",
+        "pass": true,
+        "ms": 49
+      },
+      {
+        "id": "fill-spoke_vpcs-value",
+        "pass": true,
+        "ms": 7
+      },
+      {
+        "id": "select-segment",
+        "pass": false,
+        "ms": 2,
+        "err": "selectOption: selector \"listbox[name='Segment']\" not found"
       }
     ]
   }
