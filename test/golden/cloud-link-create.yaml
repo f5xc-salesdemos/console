@@ -64,12 +64,17 @@ steps:
     value: "{type}"
     description: Select Type
     condition: params.type is set
+  - id: add-item-bring_your_own_connections
+    action: click
+    selector: button:text('Add Item')
+    context: Bring Your Own Connections table
+    description: Add a row to the Bring Your Own Connections table (starts empty — unlike most tables)
   - id: fill-bring_your_own_connections
     action: fill
     selector: ngx-datatable input.form-control
     context: Bring Your Own Connections table
     value: "{bring_your_own_connections}"
-    description: Enter Bring Your Own Connections in the existing table row (no Add Item needed — the table ships one empty row)
+    description: Enter Bring Your Own Connections in the newly-added table row (Add Item clicked above)
   - id: select-account_credential
     action: select
     selector: listbox
