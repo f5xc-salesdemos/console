@@ -1071,109 +1071,6 @@
     ]
   },
   {
-    "resource": "shared-advertise-policy",
-    "total": 10,
-    "passed": 8,
-    "failedStep": "fill-tcp_udp_port_value",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 7476
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1046
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 14
-      },
-      {
-        "id": "select-virtual_site_or_site_or_network",
-        "pass": true,
-        "ms": 1869
-      },
-      {
-        "id": "configure-reference",
-        "pass": true,
-        "ms": 55
-      },
-      {
-        "id": "fill-reference-value",
-        "pass": true,
-        "ms": 7
-      },
-      {
-        "id": "select-internet_vip_choice",
-        "pass": true,
-        "ms": 7243
-      },
-      {
-        "id": "select-tcp_udp_port",
-        "pass": true,
-        "ms": 7274
-      },
-      {
-        "id": "fill-tcp_udp_port_value",
-        "pass": false,
-        "ms": 3,
-        "err": "fill(\"spinbutton[name='TCP/UDP Port (value)']\"): no match for spinbutton[name='TCP/UDP Port (value)']"
-      }
-    ]
-  },
-  {
-    "resource": "advertise-policy",
-    "total": 11,
-    "passed": 7,
-    "failedStep": "fill-tcp_udp_port_value",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 7056
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1035
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 11
-      },
-      {
-        "id": "select-virtual_site_or_site_or_network",
-        "pass": true,
-        "ms": 1868
-      },
-      {
-        "id": "select-reference",
-        "pass": true,
-        "ms": 7325
-      },
-      {
-        "id": "select-internet_vip_choice",
-        "pass": true,
-        "ms": 7286
-      },
-      {
-        "id": "select-tcp_udp_port",
-        "pass": true,
-        "ms": 7287
-      },
-      {
-        "id": "fill-tcp_udp_port_value",
-        "pass": false,
-        "ms": 3,
-        "err": "fill(\"spinbutton[name='TCP/UDP Port (value)']\"): no match for spinbutton[name='TCP/UDP Port (value)']"
-      }
-    ]
-  },
-  {
     "resource": "cloud-connect",
     "total": 12,
     "passed": 8,
@@ -1224,40 +1121,6 @@
         "pass": false,
         "ms": 1,
         "err": "selectOption: selector \"listbox\" not found"
-      }
-    ]
-  },
-  {
-    "resource": "cloud-link",
-    "total": 12,
-    "passed": 4,
-    "failedStep": "fill-bring_your_own_connections",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 7489
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1053
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 12
-      },
-      {
-        "id": "select-type",
-        "pass": true,
-        "ms": 1865
-      },
-      {
-        "id": "fill-bring_your_own_connections",
-        "pass": false,
-        "ms": 5,
-        "err": "fill(\"ngx-datatable input.form-control\"): no match for ngx-datatable input.form-control"
       }
     ]
   },
@@ -2535,35 +2398,6 @@
     ]
   },
   {
-    "resource": "http-load-balancer",
-    "total": 6,
-    "passed": 3,
-    "failedStep": "fill-domain",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 7497
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1046
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 5
-      },
-      {
-        "id": "fill-domain",
-        "pass": false,
-        "ms": 1,
-        "err": "fill(\"ngx-datatable input.form-control-md\"): no match for ngx-datatable input.form-control-md"
-      }
-    ]
-  },
-  {
     "resource": "network-policy",
     "total": 6,
     "passed": 5,
@@ -3425,6 +3259,208 @@
         "pass": false,
         "ms": 1,
         "err": "extension tool \"click_element\" failed: \"Error: click_element: expression matched no element\""
+      }
+    ]
+  },
+  {
+    "resource": "shared-advertise-policy",
+    "total": 10,
+    "passed": 8,
+    "failedStep": "fill-tcp_udp_port_value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6952
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1049
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 10
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1862
+      },
+      {
+        "id": "configure-reference",
+        "pass": true,
+        "ms": 65
+      },
+      {
+        "id": "fill-reference-value",
+        "pass": true,
+        "ms": 6
+      },
+      {
+        "id": "select-internet_vip_choice",
+        "pass": true,
+        "ms": 7284
+      },
+      {
+        "id": "select-tcp_udp_port",
+        "pass": true,
+        "ms": 7278
+      },
+      {
+        "id": "fill-tcp_udp_port_value",
+        "pass": false,
+        "ms": 5,
+        "err": "fill(\"spinbutton[name='TCP/UDP Port']\"): no match for spinbutton[name='TCP/UDP Port']"
+      }
+    ]
+  },
+  {
+    "resource": "advertise-policy",
+    "total": 11,
+    "passed": 10,
+    "failedStep": "save",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6986
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1045
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 13
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1865
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 7299
+      },
+      {
+        "id": "select-internet_vip_choice",
+        "pass": true,
+        "ms": 7325
+      },
+      {
+        "id": "select-tcp_udp_port",
+        "pass": true,
+        "ms": 7291
+      },
+      {
+        "id": "fill-tcp_udp_port_value",
+        "pass": true,
+        "ms": 14
+      },
+      {
+        "id": "configure-port_choice",
+        "pass": true,
+        "ms": 47
+      },
+      {
+        "id": "fill-port_choice-value",
+        "pass": true,
+        "ms": 6
+      },
+      {
+        "id": "save",
+        "pass": false,
+        "ms": 1,
+        "err": "extension tool \"click_element\" failed: \"Error: click_element: expression matched no element\""
+      }
+    ]
+  },
+  {
+    "resource": "http-load-balancer",
+    "total": 7,
+    "passed": 6,
+    "failedStep": "save",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6497
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1040
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 6
+      },
+      {
+        "id": "add-item-domains",
+        "pass": true,
+        "ms": 18
+      },
+      {
+        "id": "fill-domain",
+        "pass": true,
+        "ms": 738
+      },
+      {
+        "id": "attach-origin-pool",
+        "pass": true,
+        "ms": 0,
+        "err": "skipped (condition)"
+      },
+      {
+        "id": "save",
+        "pass": false,
+        "ms": 60775,
+        "err": "waitFor \"text('xcsh-sweep-http-load-balancer')\" timed out after 60000ms"
+      }
+    ]
+  },
+  {
+    "resource": "cloud-link",
+    "total": 13,
+    "passed": 5,
+    "failedStep": "fill-bring_your_own_connections",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6528
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1047
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 12
+      },
+      {
+        "id": "select-type",
+        "pass": true,
+        "ms": 1866
+      },
+      {
+        "id": "add-item-bring_your_own_connections",
+        "pass": true,
+        "ms": 72
+      },
+      {
+        "id": "fill-bring_your_own_connections",
+        "pass": false,
+        "ms": 1,
+        "err": "fill(\"ngx-datatable input.form-control\"): no match for ngx-datatable input.form-control"
       }
     ]
   }
