@@ -81,4 +81,4 @@ metadata:
   confidence: validated
   discovered_at: 2026-06-26
   console_version: "2025.06"
-  notes: Live-validated via xcsh v19.51.6 WebSocket bridge. The spinbutton accessible name is 'Listen Port' (not 'Listen Port (value)' from form-discovery). Promoted from inferred to validated so regen preserves this file.
+  notes: Live-validated via xcsh v19.51.6 WebSocket bridge. The spinbutton accessible name is 'Listen Port' (not 'Listen Port' from form-discovery). Promoted from inferred to validated so regen preserves this file.
