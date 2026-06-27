@@ -2443,5 +2443,719 @@
         "err": "unresolved placeholder \"{server_fqdn}\" — param has no default or smart-default"
       }
     ]
+  },
+  {
+    "resource": "fast-acl",
+    "total": 9,
+    "passed": 5,
+    "failedStep": "fill-site_type_regional_edge-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 9071
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1037
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 747
+      },
+      {
+        "id": "select-select_site_type_for_acl",
+        "pass": true,
+        "ms": 1866
+      },
+      {
+        "id": "configure-site_type_regional_edge",
+        "pass": true,
+        "ms": 30
+      },
+      {
+        "id": "fill-site_type_regional_edge-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{site_type_regional_edge}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "health-check",
+    "total": 9,
+    "passed": 9,
+    "failedStep": null,
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7013
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1039
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 745
+      },
+      {
+        "id": "select-type",
+        "pass": true,
+        "ms": 1864
+      },
+      {
+        "id": "set-timeout",
+        "pass": true,
+        "ms": 865
+      },
+      {
+        "id": "set-interval",
+        "pass": true,
+        "ms": 859
+      },
+      {
+        "id": "set-unhealthy-threshold",
+        "pass": true,
+        "ms": 851
+      },
+      {
+        "id": "set-healthy-threshold",
+        "pass": true,
+        "ms": 854
+      },
+      {
+        "id": "save",
+        "pass": true,
+        "ms": 49
+      }
+    ]
+  },
+  {
+    "resource": "shared-advertise-policy",
+    "total": 9,
+    "passed": 4,
+    "failedStep": "configure-reference",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7059
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1048
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 755
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1860
+      },
+      {
+        "id": "configure-reference",
+        "pass": false,
+        "ms": 5,
+        "err": "extension tool \"click_element\" failed: \"Error: evalForObject error: Uncaught\""
+      }
+    ]
+  },
+  {
+    "resource": "bgp",
+    "total": 10,
+    "passed": 7,
+    "failedStep": "configure-bgp_parameters",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7531
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1039
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 746
+      },
+      {
+        "id": "select-where",
+        "pass": true,
+        "ms": 1871
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 7395
+      },
+      {
+        "id": "fill-asn",
+        "pass": true,
+        "ms": 869
+      },
+      {
+        "id": "select-router_id",
+        "pass": true,
+        "ms": 7401
+      },
+      {
+        "id": "configure-bgp_parameters",
+        "pass": false,
+        "ms": 16,
+        "err": "extension tool \"click_element\" failed: \"Error: evalForObject error: Uncaught\""
+      }
+    ]
+  },
+  {
+    "resource": "cloud-credentials",
+    "total": 10,
+    "passed": 6,
+    "failedStep": "fill-secret_access_key-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7061
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1050
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 744
+      },
+      {
+        "id": "select-select_cloud_credential_type",
+        "pass": true,
+        "ms": 1863
+      },
+      {
+        "id": "fill-access_key_id",
+        "pass": true,
+        "ms": 759
+      },
+      {
+        "id": "configure-secret_access_key",
+        "pass": true,
+        "ms": 61
+      },
+      {
+        "id": "fill-secret_access_key-value",
+        "pass": false,
+        "ms": 159,
+        "err": "extension tool \"click_element\" failed: \"Error: click: \\\"element\\\" not hittable — point (126,84) occluded:DIV.vsui-wizard"
+      }
+    ]
+  },
+  {
+    "resource": "log-receiver",
+    "total": 10,
+    "passed": 5,
+    "failedStep": "fill-server_name",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7124
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1048
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 754
+      },
+      {
+        "id": "select-log_receiver",
+        "pass": true,
+        "ms": 1869
+      },
+      {
+        "id": "select-syslog_transport_mode",
+        "pass": true,
+        "ms": 7413
+      },
+      {
+        "id": "fill-server_name",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{server_name}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "network-connector",
+    "total": 10,
+    "passed": 7,
+    "failedStep": "configure-connector_choice",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7054
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1044
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 744
+      },
+      {
+        "id": "select-select_network_connector_type",
+        "pass": true,
+        "ms": 1864
+      },
+      {
+        "id": "select-routing_mode",
+        "pass": true,
+        "ms": 7387
+      },
+      {
+        "id": "select-snat_source_ip_selection",
+        "pass": true,
+        "ms": 7415
+      },
+      {
+        "id": "select-select_forward_proxy",
+        "pass": true,
+        "ms": 7416
+      },
+      {
+        "id": "configure-connector_choice",
+        "pass": false,
+        "ms": 17,
+        "err": "extension tool \"click_element\" failed: \"Error: evalForObject error: Uncaught\""
+      }
+    ]
+  },
+  {
+    "resource": "advertise-policy",
+    "total": 11,
+    "passed": 9,
+    "failedStep": "fill-port_choice-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7575
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1052
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 755
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1872
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 7400
+      },
+      {
+        "id": "select-internet_vip_choice",
+        "pass": true,
+        "ms": 7415
+      },
+      {
+        "id": "select-tcp_udp_port",
+        "pass": true,
+        "ms": 7424
+      },
+      {
+        "id": "fill-tcp_udp_port_value",
+        "pass": true,
+        "ms": 860
+      },
+      {
+        "id": "configure-port_choice",
+        "pass": true,
+        "ms": 62
+      },
+      {
+        "id": "fill-port_choice-value",
+        "pass": false,
+        "ms": 158,
+        "err": "extension tool \"click_element\" failed: \"Error: click: \\\"element\\\" not hittable — point (126,84) occluded:DIV.vsui-wizard"
+      }
+    ]
+  },
+  {
+    "resource": "nfv-service",
+    "total": 11,
+    "passed": 5,
+    "failedStep": "fill-provider_configuration-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7491
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1050
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 737
+      },
+      {
+        "id": "select-external_service_provider",
+        "pass": true,
+        "ms": 1866
+      },
+      {
+        "id": "configure-provider_configuration",
+        "pass": true,
+        "ms": 88
+      },
+      {
+        "id": "fill-provider_configuration-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{provider_configuration}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "cloud-connect",
+    "total": 12,
+    "passed": 7,
+    "failedStep": "fill-spoke_vpcs-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7194
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1043
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 754
+      },
+      {
+        "id": "select-provider",
+        "pass": true,
+        "ms": 1867
+      },
+      {
+        "id": "select-site_reference",
+        "pass": true,
+        "ms": 7400
+      },
+      {
+        "id": "select-credential_reference",
+        "pass": true,
+        "ms": 7383
+      },
+      {
+        "id": "configure-spoke_vpcs",
+        "pass": true,
+        "ms": 44
+      },
+      {
+        "id": "fill-spoke_vpcs-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{spoke_vpcs}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "cloud-link",
+    "total": 13,
+    "passed": 5,
+    "failedStep": "fill-bring_your_own_connections",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7034
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1049
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 748
+      },
+      {
+        "id": "select-type",
+        "pass": true,
+        "ms": 1866
+      },
+      {
+        "id": "add-item-bring_your_own_connections",
+        "pass": true,
+        "ms": 32
+      },
+      {
+        "id": "fill-bring_your_own_connections",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{bring_your_own_connections}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "proxy",
+    "total": 14,
+    "passed": 7,
+    "failedStep": "fill-site_or_virtual_site-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7488
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1037
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 755
+      },
+      {
+        "id": "select-http_connect_proxy_or_dynamic_reverse_proxy",
+        "pass": true,
+        "ms": 1864
+      },
+      {
+        "id": "select-http_connect",
+        "pass": true,
+        "ms": 1858
+      },
+      {
+        "id": "select-select_sites_for_proxy",
+        "pass": true,
+        "ms": 7282
+      },
+      {
+        "id": "configure-site_or_virtual_site",
+        "pass": true,
+        "ms": 102
+      },
+      {
+        "id": "fill-site_or_virtual_site-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{site_or_virtual_site}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "discovery",
+    "total": 16,
+    "passed": 7,
+    "failedStep": "fill-kubeconfig-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8087
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1041
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 737
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 1872
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 7312
+      },
+      {
+        "id": "select-select_kubernetes_credentials",
+        "pass": true,
+        "ms": 7306
+      },
+      {
+        "id": "configure-kubeconfig",
+        "pass": true,
+        "ms": 68
+      },
+      {
+        "id": "fill-kubeconfig-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{kubeconfig}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "fleet",
+    "total": 16,
+    "passed": 15,
+    "failedStep": "save",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7537
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1045
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 748
+      },
+      {
+        "id": "fill-fleet_label_value",
+        "pass": true,
+        "ms": 749
+      },
+      {
+        "id": "select-select_bond_configuration",
+        "pass": true,
+        "ms": 7326
+      },
+      {
+        "id": "select-select_interface_config",
+        "pass": true,
+        "ms": 7341
+      },
+      {
+        "id": "select-select_storage_interface_configuration",
+        "pass": true,
+        "ms": 7313
+      },
+      {
+        "id": "select-select_storage_device_configuration",
+        "pass": true,
+        "ms": 7292
+      },
+      {
+        "id": "select-select_configuration_for_storage_classes",
+        "pass": true,
+        "ms": 7329
+      },
+      {
+        "id": "select-select_storage_static_routes",
+        "pass": true,
+        "ms": 7318
+      },
+      {
+        "id": "select-node_by_node_upgrade",
+        "pass": true,
+        "ms": 7334
+      },
+      {
+        "id": "fill-upgrade_wait_time",
+        "pass": true,
+        "ms": 857
+      },
+      {
+        "id": "select-node_batch_size",
+        "pass": true,
+        "ms": 7322
+      },
+      {
+        "id": "fill-node_batch_size_count",
+        "pass": true,
+        "ms": 859
+      },
+      {
+        "id": "select-sr_iov_interfaces",
+        "pass": true,
+        "ms": 7326
+      },
+      {
+        "id": "save",
+        "pass": false,
+        "ms": 30735,
+        "err": "waitFor \"text('xcsh-sweep-fleet')\" timed out after 30000ms"
+      }
+    ]
+  },
+  {
+    "resource": "securemesh-site",
+    "total": 20,
+    "passed": 4,
+    "failedStep": "fill-master_nodes",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7685
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1044
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 751
+      },
+      {
+        "id": "select-generic_server_certified_hardware",
+        "pass": true,
+        "ms": 7448
+      },
+      {
+        "id": "fill-master_nodes",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{master_nodes}\" — param has no default or smart-default"
+      }
+    ]
   }
 ]
