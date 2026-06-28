@@ -28,7 +28,6 @@ params:
     required: true
     description: 'Secret field: click Configure (a link), enter the value in the secret TEXTAREA (Secret Type defaults are
       fine), then Apply. Verified live: create 200.'
-    default: xcsh-test-secret-value-01
 steps:
 - id: navigate-to-list
   action: navigate

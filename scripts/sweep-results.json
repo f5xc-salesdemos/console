@@ -937,5 +937,128 @@
         "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
       }
     ]
+  },
+  {
+    "resource": "service-policy",
+    "total": 5,
+    "passed": 1,
+    "failedStep": "click-add-tab",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8022
+      },
+      {
+        "id": "click-add-tab",
+        "pass": false,
+        "ms": 20154,
+        "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "service-policy-rule",
+    "total": 5,
+    "passed": 1,
+    "failedStep": "click-add-tab",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8392
+      },
+      {
+        "id": "click-add-tab",
+        "pass": false,
+        "ms": 13,
+        "err": "extension tool \"click_element\" failed: \"Error: click_element: expression matched no element\""
+      }
+    ]
+  },
+  {
+    "resource": "v1-dns-monitor",
+    "total": 5,
+    "passed": 0,
+    "failedStep": "navigate-to-list",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": false,
+        "ms": 24280,
+        "err": "waitFor \"text('DNS Monitors')\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "v1-http-monitor",
+    "total": 5,
+    "passed": 0,
+    "failedStep": "navigate-to-list",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": false,
+        "ms": 23199,
+        "err": "waitFor \"text('HTTP Monitors')\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "virtual-host",
+    "total": 5,
+    "passed": 1,
+    "failedStep": "click-add-tab",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7852
+      },
+      {
+        "id": "click-add-tab",
+        "pass": false,
+        "ms": 20128,
+        "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "virtual-network",
+    "total": 5,
+    "passed": 1,
+    "failedStep": "click-add-tab",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8888
+      },
+      {
+        "id": "click-add-tab",
+        "pass": false,
+        "ms": 20132,
+        "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "alert-policy",
+    "total": 6,
+    "passed": 1,
+    "failedStep": "click-add-tab",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8309
+      },
+      {
+        "id": "click-add-tab",
+        "pass": false,
+        "ms": 20132,
+        "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
+      }
+    ]
   }
 ]
