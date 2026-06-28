@@ -3185,44 +3185,48 @@
   {
     "resource": "service-credential",
     "total": 8,
-    "passed": 6,
-    "failedStep": "fill-expiry_date",
+    "passed": 8,
+    "failedStep": null,
     "steps": [
       {
         "id": "navigate-to-list",
         "pass": true,
-        "ms": 6481
+        "ms": 7019
       },
       {
         "id": "click-add-tab",
         "pass": true,
-        "ms": 65
+        "ms": 55
       },
       {
         "id": "fill-credential_email",
         "pass": true,
-        "ms": 337
+        "ms": 335
       },
       {
         "id": "select-credential_type",
         "pass": true,
-        "ms": 647
+        "ms": 652
       },
       {
         "id": "fill-password",
         "pass": true,
-        "ms": 178
+        "ms": 179
       },
       {
         "id": "fill-confirm_password",
         "pass": true,
-        "ms": 171
+        "ms": 173
       },
       {
         "id": "fill-expiry_date",
-        "pass": false,
-        "ms": 1,
-        "err": "unresolved placeholder \"{expiry_date}\" — param has no default or smart-default"
+        "pass": true,
+        "ms": 194
+      },
+      {
+        "id": "save",
+        "pass": true,
+        "ms": 21
       }
     ]
   }
