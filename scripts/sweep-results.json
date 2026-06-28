@@ -566,40 +566,6 @@
     ]
   },
   {
-    "resource": "bgp-asn-set",
-    "total": 5,
-    "passed": 4,
-    "failedStep": "save",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 8117
-      },
-      {
-        "id": "click-add-tab",
-        "pass": true,
-        "ms": 1061
-      },
-      {
-        "id": "fill-name",
-        "pass": true,
-        "ms": 200
-      },
-      {
-        "id": "fill-as_numbers",
-        "pass": true,
-        "ms": 198
-      },
-      {
-        "id": "save",
-        "pass": false,
-        "ms": 30631,
-        "err": "save rejected (form stayed on page — server validation error). waitFor \"text('xcsh-sweep-bgp-asn-set')\" timed out after "
-      }
-    ]
-  },
-  {
     "resource": "cluster",
     "total": 5,
     "passed": 5,
@@ -1032,6 +998,39 @@
         "pass": false,
         "ms": 13,
         "err": "extension tool \"click_element\" failed: \"Error: click_element: expression matched no element\""
+      }
+    ]
+  },
+  {
+    "resource": "bgp-asn-set",
+    "total": 5,
+    "passed": 5,
+    "failedStep": null,
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 6933
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1048
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 191
+      },
+      {
+        "id": "fill-as_numbers",
+        "pass": true,
+        "ms": 199
+      },
+      {
+        "id": "save",
+        "pass": true,
+        "ms": 1057
       }
     ]
   }
