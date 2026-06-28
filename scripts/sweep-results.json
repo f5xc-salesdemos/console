@@ -776,5 +776,117 @@
         "err": "unresolved placeholder \"{receiver_configuration}\" — param has no default or smart-default"
       }
     ]
+  },
+  {
+    "resource": "app-api-group",
+    "total": 6,
+    "passed": 5,
+    "failedStep": "save",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7584
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1052
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 198
+      },
+      {
+        "id": "select-scope",
+        "pass": true,
+        "ms": 668
+      },
+      {
+        "id": "select-http_load_balancer",
+        "pass": true,
+        "ms": 6615
+      },
+      {
+        "id": "save",
+        "pass": false,
+        "ms": 30588,
+        "err": "save rejected (form stayed on page — server validation error). waitFor \"text('xcsh-sweep-app-api-group')\" timed out afte"
+      }
+    ]
+  },
+  {
+    "resource": "app-firewall",
+    "total": 6,
+    "passed": 0,
+    "failedStep": "navigate-to-list",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": false,
+        "ms": 22408,
+        "err": "waitFor \"text('App Firewalls')\" timed out after 15000ms"
+      }
+    ]
+  },
+  {
+    "resource": "advertise-policy",
+    "total": 11,
+    "passed": 9,
+    "failedStep": "fill-port_choice-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7007
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1056
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 193
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 675
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 6613
+      },
+      {
+        "id": "select-internet_vip_choice",
+        "pass": true,
+        "ms": 6631
+      },
+      {
+        "id": "select-tcp_udp_port",
+        "pass": true,
+        "ms": 6602
+      },
+      {
+        "id": "fill-tcp_udp_port_value",
+        "pass": true,
+        "ms": 195
+      },
+      {
+        "id": "configure-port_choice",
+        "pass": true,
+        "ms": 61
+      },
+      {
+        "id": "fill-port_choice-value",
+        "pass": false,
+        "ms": 161,
+        "err": "extension tool \"click_element\" failed: \"Error: click: \\\"element\\\" not hittable — point (126,84) occluded:DIV.vsui-wizard"
+      }
+    ]
   }
 ]
