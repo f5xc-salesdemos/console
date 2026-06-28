@@ -3044,25 +3044,6 @@
     ]
   },
   {
-    "resource": "http-load-balancer",
-    "total": 7,
-    "passed": 1,
-    "failedStep": "click-add-tab",
-    "steps": [
-      {
-        "id": "navigate-to-list",
-        "pass": true,
-        "ms": 9560
-      },
-      {
-        "id": "click-add-tab",
-        "pass": false,
-        "ms": 20128,
-        "err": "waitFor \"textbox[name='Name']\" timed out after 15000ms"
-      }
-    ]
-  },
-  {
     "resource": "health-check",
     "total": 9,
     "passed": 9,
@@ -3073,6 +3054,50 @@
         "pass": true,
         "ms": 0,
         "err": "already exists — skipped create"
+      }
+    ]
+  },
+  {
+    "resource": "http-load-balancer",
+    "total": 7,
+    "passed": 7,
+    "failedStep": null,
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 8500
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1061
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 186
+      },
+      {
+        "id": "add-item-domains",
+        "pass": true,
+        "ms": 71
+      },
+      {
+        "id": "fill-domain",
+        "pass": true,
+        "ms": 190
+      },
+      {
+        "id": "attach-origin-pool",
+        "pass": true,
+        "ms": 0,
+        "err": "skipped (condition)"
+      },
+      {
+        "id": "save",
+        "pass": true,
+        "ms": 1058
       }
     ]
   }
