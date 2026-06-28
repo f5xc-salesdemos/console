@@ -3107,5 +3107,103 @@
         "err": "unresolved placeholder \"{bring_your_own_connections}\" — param has no default or smart-default"
       }
     ]
+  },
+  {
+    "resource": "proxy",
+    "total": 14,
+    "passed": 7,
+    "failedStep": "fill-site_or_virtual_site-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7263
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1051
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 191
+      },
+      {
+        "id": "select-http_connect_proxy_or_dynamic_reverse_proxy",
+        "pass": true,
+        "ms": 664
+      },
+      {
+        "id": "select-http_connect",
+        "pass": true,
+        "ms": 661
+      },
+      {
+        "id": "select-select_sites_for_proxy",
+        "pass": true,
+        "ms": 6504
+      },
+      {
+        "id": "configure-site_or_virtual_site",
+        "pass": true,
+        "ms": 92
+      },
+      {
+        "id": "fill-site_or_virtual_site-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{site_or_virtual_site}\" — param has no default or smart-default"
+      }
+    ]
+  },
+  {
+    "resource": "discovery",
+    "total": 16,
+    "passed": 7,
+    "failedStep": "fill-kubeconfig-value",
+    "steps": [
+      {
+        "id": "navigate-to-list",
+        "pass": true,
+        "ms": 7005
+      },
+      {
+        "id": "click-add-tab",
+        "pass": true,
+        "ms": 1045
+      },
+      {
+        "id": "fill-name",
+        "pass": true,
+        "ms": 179
+      },
+      {
+        "id": "select-virtual_site_or_site_or_network",
+        "pass": true,
+        "ms": 667
+      },
+      {
+        "id": "select-reference",
+        "pass": true,
+        "ms": 6561
+      },
+      {
+        "id": "select-select_kubernetes_credentials",
+        "pass": true,
+        "ms": 6527
+      },
+      {
+        "id": "configure-kubeconfig",
+        "pass": true,
+        "ms": 51
+      },
+      {
+        "id": "fill-kubeconfig-value",
+        "pass": false,
+        "ms": 0,
+        "err": "unresolved placeholder \"{kubeconfig}\" — param has no default or smart-default"
+      }
+    ]
   }
 ]
