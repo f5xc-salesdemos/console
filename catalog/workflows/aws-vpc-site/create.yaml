@@ -52,7 +52,7 @@ steps:
     selector: button:text('Add Item')
     context: AWS Credentials section
     condition: params.aws_credentials is set
-    description: Attach AWS Credentials (references a resource)
+    description: Attach AWS Credentials (references a cloud_credentials)
     then:
       - id: select-aws_credentials
         action: select

@@ -43,7 +43,7 @@ steps:
     selector: button:text('Add Item')
     context: GCP Credentials section
     condition: params.gcp_credentials is set
-    description: Attach GCP Credentials (references a resource)
+    description: Attach GCP Credentials (references a cloud_credentials)
     then:
       - id: select-gcp_credentials
         action: select

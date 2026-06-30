@@ -52,7 +52,7 @@ steps:
     selector: button:text('Add Item')
     context: Azure Credentials section
     condition: params.azure_credentials is set
-    description: Attach Azure Credentials (references a resource)
+    description: Attach Azure Credentials (references a cloud_credentials)
     then:
       - id: select-azure_credentials
         action: select

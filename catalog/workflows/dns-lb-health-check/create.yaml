@@ -51,12 +51,12 @@ steps:
   value: '{health_check_type}'
   description: Select Health Check Type
   condition: params.health_check_type is set
-- id: select-health_check_port
-  action: select
-  selector: listbox[name='Health Check Port']
+- id: fill-health_check_port
+  action: fill
+  selector: spinbutton[name='Health Check Port']
   context: HTTP Health Check section
   value: '{health_check_port}'
-  description: "Select Health Check Port (listbox, default 0 \u2192 must pick a port \u22651)"
+  description: "Type Health Check Port (numeric spinbutton, min 1, default 80 \u2014 NOT a listbox)"
   condition: params.health_check_port is set
 - id: select-virtual_host
   action: select
