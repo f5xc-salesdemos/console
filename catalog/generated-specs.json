@@ -268,13 +268,5 @@
         }
       ]
     }
-  },
-  "app-firewall": {
-    "namespace": "demo",
-    "metadata": {
-      "name": "example",
-      "namespace": "demo"
-    },
-    "spec": {}
   }
 }
