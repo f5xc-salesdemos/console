@@ -46,6 +46,21 @@ steps:
   context: Domains table
   value: '{domains}'
   description: "Enter Domains in the existing table row (no Add Item needed \u2014 the table ships one empty row)"
+- id: configure-cdn-origin-pool
+  action: click
+  selector: text('Configure')
+  context: CDN Origin Pool section
+  description: "Open the CDN Origin Pool Configure sub-form (required \u2014 inline configuration, not a reference)"
+  then:
+    - id: fill-origin-dns
+      action: fill
+      selector: textbox[name='DNS Name']
+      value: '{domains}'
+      description: "Enter the origin server DNS name"
+    - id: apply-origin-pool
+      action: click
+      selector: button:text('Apply')
+      description: "Confirm CDN Origin Pool configuration"
 - id: select-load_balancer_type
   action: select
   selector: listbox
